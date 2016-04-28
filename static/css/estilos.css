@@ -1,0 +1,26 @@
+.navbar{
+	margin-bottom: 0;
+}
+
+.jumbotron{
+	background: #428BCA;
+	color: #fff;
+	padding: 20px 0;
+}
+
+.jumbotron .titulo-blog{
+	text-align: left;
+}
+
+.thumbnail{
+	border: none;
+}
+
+.jumbotron{
+	background-image: url('/static/img/logo.jpg');
+	background-size: cover;
+}
+
+.registry{
+	padding: 10px 0;
+}

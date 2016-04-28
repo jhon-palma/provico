@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Programa Victimas del conflicto</title>
+		<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/datepicker.css" rel="stylesheet">
+		<link href="/static/css/estilos.css" rel="stylesheet" >
+        <link  href="/static/img/favicon.ico" rel="shortcut icon">
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+							<span class="sr-only">Desplegar / ocultar menu</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand">ProViCo</a>	
+					</div>
+					<div class="collapse navbar-collapse" id="navegacion-fm">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="{%  url 'index' %}">Inicio</a></li>
+                            <li role="presentation" class="dropdown">
+							    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Estructuracion <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{%  url 'registrousu' %}">Registro de usuarios</a></li>
+                                    <li><a href="{%  url 'registroben' %}">Ingresar beneficiarios</a></li>
+                                </ul>
+                            </li>
+                            <li role="presentation" class="dropdown">
+							    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Informes <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{%  url 'informeben' %}">Informes beneficiarios</a></li>
+                                    <li><a href="{%  url 'informeusu' %}">Auditoria de usuarios</a></li>
+                                </ul>
+                            </li>
+							<li><a href="{%  url 'login' %}">Salir</a></li>
+						</ul>
+
+					</div>
+				</div>	
+			</nav>
+		</header>
+        <div class="container">
+
+            <div class="starter-template">
+                <h1 align="center">Registro de beneficiarios  ProViCo</h1>
+                <p class="lead">Señor usuario, registre acontinuacion los beneficiarios del programa. Diligencie todos los datos<br>
+
+                </p>
+            </div>
+
+    </div><!-- /.container -->
+		<form class="registry" method="post" action="">
+            {% csrf_token %}
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-3"></div>
+                    <div class="col-md-5">
+
+                        <div class="form-group"><h4>
+                            <label for="exampleInputnomre">Nombre</label>
+                            <input type="text" class="form-control" name="nombre" placeholder="Nombre"></h4>
+                        </div>
+                        <div class="form-group"><h4>
+                            <label for="exampleInputapellidos">Apellidos</label>
+                            <input type="text" class="form-control" name="apellidos" placeholder="Apellidos"></h4>
+                        </div>
+                        <div class="form-group"><h4>
+                            <label for="exampleInputapellidos">Cedula</label>
+                            <input type="text" class="form-control" name="cedula" placeholder="Numero de cedula"></h4>
+                        </div>
+                        <div class="form-group"><h4>
+                            <label for="exampleGenero">Genero</label>
+                            <select class="form-control">
+                                <option selected disabled>Genero</option>
+                                {% for g in genero %}
+                                <option value="{{ g.0 }}">{{ g.1 }}</option>
+                                {% endfor %}
+                            </select>
+
+                            </h4>
+                        </div>
+                        <div class="form-group"><h4>
+                            <label for="exampleFechaNace">Fecha de Nacimiento</label><br>
+                                <input class="datepicker" size="16" type="text" name="date" data-date-viewmode="years">
+                                <span class="add-on"><i class="icon-th"></i></span>
+
+                        </h4>
+                        </div>
+                        <div class="form-group"><h4>
+                            <label for="exampleInputLugar">Lugar de Origen</label>
+                            <select class="form-control" id="depart">
+                                <option selected disabled>Departamento</option>
+                                {% for departamento in departamentos %}
+                                <option value="{{ departamento.id }}">{{ departamento.departamento }}</option>
+                                {% endfor %}
+                            </select></h4>
+                        </div>
+                        <div class="form-group"><h4>
+                             <select class="form-control">
+                                    <option selected disabled>Ciudad</option>
+                                    {% for ciudad in ciudades %}
+                                    <option value="{{ ciudad.id }}">{{ ciudad.ciudad }}</option>
+                                    {% endfor %}
+                            </select></h4>
+                        </div>
+                        <div class="form-group"><h4>
+                            <label for="exampleInputEmail1">Correo electronico</label>
+                            <input type="email" class="form-control" name="email" placeholder="Email"></h4>
+                        </div>
+                        <div class="form-group"><h4>
+                            <label for="exampleInputTel">Telefono</label>
+                            <input type="tel" class="form-control" name="telefono" placeholder="Telefono"></h4>
+                        </div>
+                        <div class="form-group"><h4>
+                            <label for="exampleInputdireccion">Direccion Actual</label>
+                            <input type="text" class="form-control" name="direccion" placeholder="Direccion"></h4>
+                        </div>
+                        <div class="form-group"><h4>
+                            <label for="exampleInputEmail1">Estrato</label>
+                            <select class="form-control">
+                                <option selected disabled>Seleccione Estrato</option>
+                                {% for e in estrato %}
+                                <option value="{{ e.0 }}">{{ e.1 }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group"><h4>
+                            <label for="exampleInputEmail1">Nivel Educativo</label>
+                            <select class="form-control">
+                                <option selected disabled>Seleccione Nivel educativo</option>
+                                {% for escolar in listaEscolar %}
+                                <option value="{{ escolar.0 }}">{{ escolar.1 }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group"><h4>
+                            <label for="exampleInputocupacion">Ocupacion</label>
+                            <input type="text" class="form-control" name="ocupacion" placeholder="Ocupacion"></h4>
+                        </div>
+                        <div class="form-group"><h4>
+                            <label for="exampleInputEmail1">Relacion con cabeza de hogar</label>
+                            <input type="text" class="form-control" name="parentesco" placeholder="Parentesco"></h4>
+                        </div>
+                        <div class="form-group"><h4>
+                            <label for="exampleInputapellidos">Cedula Cabeza hogar</label>
+                            <input type="text" class="form-control" name="cedulacabeza" placeholder="Numero de cedula"></h4>
+                        </div>
+
+                        <div>
+                            <p>
+                                <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+		<footer>
+
+		</footer>
+
+		<script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <script src="/static/js/bootstrap-datepicker.js"></script>
+        <script>
+            $(function () {
+                $('.datepicker').datepicker();
+
+                
+            })
+        </script>
+        <script>
+            $('select').on('change',inicio);
+            function inicio() {
+                var id = $(this).val();
+                $.ajax({
+                    data : {'id':id},
+                    url: 'registrobenAjax',
+                    type: 'get',
+                    success: function(data){
+                        console.log(data);
+                    }
+                })
+            }
+
+        </script>
+
+	</body>
+</html>
