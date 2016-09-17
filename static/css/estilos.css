@@ -17,10 +17,83 @@
 }
 
 .jumbotron{
-	background-image: url('/static/img/logo.jpg');
+	margin-top: 20px;
+	background-image: url('/static/img/logo.png');
 	background-size: cover;
+	width: 100%;
+    height: 280px;
 }
 
 .registry{
 	padding: 10px 0;
+}
+.glyphicon.glyphicon-lock {
+    font-size: 150px;
+	color: #F2F2F2;
+}
+.login i {
+    display:block;
+    text-align:center;
+	margin-bottom:15px;
+}
+
+.btn-block, .btn-block:active {
+	background-color:#101010;
+}
+
+.btn-block:hover{
+	background-color: #716F6F;
+}
+
+.not-active {
+   pointer-events: none;
+   cursor: default;
+}
+
+.page-header{
+	color: black;
+	font-weight: bold;
+	text-align: center;
+	font-style: italic;
+	font-size: 40px;
+}
+
+.eslogan{
+	color: black;
+	font-weight: bold;
+	text-align: center;
+	font-style: italic;
+	font-size: 20px;
+}
+
+#dudas{
+    width:100px;
+    height: 140px;
+}
+.dudas{
+    padding-top: 0px;
+    margin-top: 20px;
+    color: #1A1919;
+    height: 180px;
+}
+
+.dudas h1{
+    color: #FF0080;   
+}
+#contact{
+    text-align: center;
+    margin-top: 15px;
+    border-color: #86084a;
+    background: #d61278;
+    font-family: Roboto, sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+#contact:hover {
+  background: #F05DA9;
+  text-decoration: none;
 }

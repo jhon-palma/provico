@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Programa Victimas del conflicto</title>
+		<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/static/css/estilos.css" rel="stylesheet" >
+        <link  href="/static/img/favicon.ico" rel="shortcut icon">
+	</head>
+	<body>
+    <div class="container">
+
+    <div class="jumbotron" > <!-- start jumbotron -->
+        
+  </div> 
+  <div class="page-header">
+        "Sistema de información para la caracterización y gestión de la población desplazada en la ciudad de Girardot."
+      </div>
+<p class="lead">El proposito de esta aplicación es realizar la caracterización de la población desplazada de Girardot y que facilite los informes de gestión para determinar el cumplimiento de las metas de la Secretaria de Desarrollo social y económico en su programa <strong>“MENOS VICTIMAS MAS VICTORIOSOS”</strong>.</p>
+      <div><p>
+    <a href="login"><button class="btn btn-primary btn-lg" >Ingresar</button></a>
+        </p></div>
+        <div class="eslogan">
+        "Iniciando la restauración de tus derechos"
+      </div>
+
+<div>
+<div class="row">
+        <div class="col-md-9">
+        <h1>Dudas e inquietudes</h1>
+        <p>Tienes alguna duda e inquietud contactanos y en breve nuestro equipo se comunicara contigo. </p>
+        </div>
+        <div class="col-md-3">
+        <img class="img-responsive" id="dudas" src="static/img/dudas.png">
+              </div>
+              </div>
+              </div>
+              </div>
+              {% if error %}
+      <div class="alert alert-danger"> {{ error }} </div>
+    {% endif %}
+    {% if success %}
+      <div class="alert alert-success"> {{ alert }}</div>
+    {% endif %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-5">
+            <div class="ibody">
+                <h1>Contactenos</h1>
+                <div class="fcontacto">
+                    <form method="POST" name="fcontacto" id="fcontacto" action="">
+                    {% csrf_token %}
+                        <label>Nombre:</label>
+                        <input type="text" name="name" id="name" class="form-control">
+                        <label>Email:</label>
+                        <input type="email" name="email" id="email" class="form-control">
+                        <label>Teléfono:</label>
+                        <input type="tel" name="telefono" id="telefono" class="form-control">   
+                        <label>Asunto:</label>
+                        <input type="text" name="asunto" id="asunto" class="form-control">
+                        <label>Mensaje:</label>
+                        <textarea type="text" name="mensaje" id="mensaje" cols="30" rows="10" class="form-control" resize="none"></textarea> 
+                        <input type="submit" class="btn btn-primary btn-lg" value="Enviar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div> 
+          
+      <div class="navbar navbar-default navbar-static-bottom">
+    <div class="container">
+        <p class="navbar-text">© 2016 Tecnología en Desarrollo de sistemas de información </p>
+
+    </div><!--container-->
+</div><!--navbar-->
+                        
+    </body>
+</html>

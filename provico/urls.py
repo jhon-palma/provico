@@ -15,14 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from app.views import index
-from app.views import registrousu
-from app.views import informeusu
-from app.views import informeben
-from app.views import registroben
-from app.views import registrobenAjax
-from app.views import login
-from app.views import search
+from app.views import *
 
 urlpatterns = [
 	url(r'^$', index , name='index'),
@@ -32,7 +25,10 @@ urlpatterns = [
     url(r'^registroben$', registroben, name='registroben'),
     url(r'^registrobenAjax$', registrobenAjax, name='registrobenAjax'),
     url(r'^login$', login, name='login'),
-    url('^search$', search, name='search'),
+    url(r'^landing$', landing, name='landing'),
+    url(r'^logout$', logout, name='logout'),
+    url(r'^search$', search, name='search'),
+    url(r'^principal$', search, name='principal'),
     url(r'^admin/', admin.site.urls),
 
 ]

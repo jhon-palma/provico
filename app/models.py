@@ -9,7 +9,7 @@ class Usuario(User):
         proxy = True
 
 class Departamento(models.Model):
-    codigo = models.IntegerField(default=0)
+    codigo = models.CharField(max_length=2)
     departamento = models.CharField(max_length=50)
 
     class Meta:
@@ -20,7 +20,7 @@ class Departamento(models.Model):
         return self.departamento
 
 class Ciudad(models.Model):
-    codigo = models.IntegerField(default=0)
+    codigo = models.CharField(max_length=3)
     ciudad = models.CharField(max_length=50)
     departamento = models.ForeignKey(Departamento)
 
@@ -54,14 +54,24 @@ ListaGenero = (
     ('M','M'),
     ('F','F'),
 )
-class beneficiario(models.Model):
-    cedula = models.IntegerField
+
+ListaTipoDocumento = (
+    ('RC','RC'),
+    ('TI','TI'),
+    ('CC','CC'),
+    ('CE','CE'),
+)
+ListaParentezco = (
+    ('Hijo', )
+)
+class Beneficiario(models.Model):
+    tipoDocumento = models.CharField(max_length=2, choices=ListaTipoDocumento)
+    numeroDocumento = models.IntegerField()
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
-    departamento = models.ForeignKey(Departamento)
     ciudad = models.ForeignKey(Ciudad)
     genero = models.CharField(max_length=1, choices=ListaGenero)
-    nace = models.DateField()
+    nace = models.DateField(null=True)
     email = models.EmailField()
     telefono = models.IntegerField()
     direccion = models.CharField(max_length=50)
@@ -70,3 +80,4 @@ class beneficiario(models.Model):
     ocupacion = models.CharField(max_length=50)
     parentesco = models.CharField(max_length=50)
     cabeza = models.IntegerField()
+

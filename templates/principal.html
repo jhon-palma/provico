@@ -1,0 +1,39 @@
+{% extends 'template.html' %}
+{% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <h1><span class="glyphicon glyphicon-user"></span></h1>
+                        <h3>Registro de usuarios</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <h1><span class="glyphicon glyphicon-file"></span></h1>
+                        <h3>Informes de Usuarios</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <h1><span class="glyphicon glyphicon-ok-sign data-wow-delay="></span></h1>
+                        <h3>Registro de Beneficiarios</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <h1><span class="glyphicon glyphicon-list-alt"></span></h1>
+                        <h3>Informes de Beneficiarios</h3>
+                    </div>
+                </div>
+            </div>
+			</div>
+        <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'search' %}">
+                <div class="input-group">
+                    <input type="text" name="filter" class="form-control" id ="txtBuscar" placeholder="Buscar por ...">
+                    <span class="input-group-btn">
+                      <button id="btnBuscar"  class="btn btn-default" type="submit">Ir!</button>
+                    </span>
+                </div><!-- /input-group -->
+        </form>
+{% endblock %}

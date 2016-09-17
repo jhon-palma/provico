@@ -47,12 +47,12 @@ class FormRegistroValidator(Validator):
         if not super(FormRegistroValidator, self).is_valid():
             return False
         #validar que las contraseñas sehan iguales
-        if not self._post['password1'] == self._post['password2']:
+        if not self._post['password'] == self._post['repassword']:
             self._message = 'Las contraseñas no  coinciden'
             return False
 
-        if Usuario.objects.filter(email = self._post('email')).exists():
-            self._message = 'El correo electrónico ya se encuentra registrado'
+        if Usuario.objects.filter(username = self._post['cedula']).exists():
+            self._message = 'El usuario ya se encuentra registrado'
             return False
         #Por ultimo retornamos que en caso de que todo marche bien es correcto el formulario
         return True
@@ -73,3 +73,11 @@ class FormLoginValidator(Validator):
             self._message = 'Usuario o contraseña inválido'
             return False
         return True
+
+class FormContacto(Validator):
+
+    if Validator == True:
+        self._message = 'Comentario enviado con exito. En breve te responderemos'
+
+    def getMessage(self):
+        return self._message
