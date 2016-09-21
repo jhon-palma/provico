@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'das6kaduuov2jb',
         'USER': 'zorusvsvgmxkun',
         'PASSWORD': 'PMbmnS6CNzOiARr_6btbhy7cGk',
-        'HOST': 'postgres://zorusvsvgmxkun:PMbmnS6CNzOiARr_6btbhy7cGk@ec2-54-243-208-195.compute-1.amazonaws.com:5432/das6kaduuov2jb',
+        'HOST': 'ec2-54-243-249-154.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
