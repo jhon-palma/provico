@@ -78,8 +78,14 @@ WSGI_APPLICATION = 'provico.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'das6kaduuov2jb',
+        'USER': 'zorusvsvgmxkun',
+        'PASSWORD': 'PMbmnS6CNzOiARr_6btbhy7cGk',
+        'HOST': 'postgres://zorusvsvgmxkun:PMbmnS6CNzOiARr_6btbhy7cGk@ec2-54-243-208-195.compute-1.amazonaws.com:5432/das6kaduuov2jb',
+        'PORT': '5432',
     }
 }
 
@@ -106,9 +112,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-co'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Bogota'
 
 USE_I18N = True
 
